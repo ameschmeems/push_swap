@@ -1,8 +1,10 @@
 NAME		:=	push_swap
 
-SRCS		:=	srcs/main.c
+SRCS		:=	srcs/main.c \
+				srcs/init.c \
+				srcs/push.c
 
-OBJS		:=	srcs/main.o
+OBJS		:=	${SRCS:.c=.o}
 
 CC			:=	gcc
 
@@ -12,9 +14,9 @@ INCLUDES	:=	./includes
 
 all:		${NAME}
 
-${NAME}:	${SRCS}
+${NAME}:	${OBJS}
 		@make -C ./ft_printf
-		${CC} ${CFLAGS} ${SRCS} -Lft_printf -lftprintf -o ${NAME}
+		${CC} ${OBJS} -Lft_printf -lftprintf -o ${NAME}
 
 clean:
 		@make -C ./ft_printf clean
