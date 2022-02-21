@@ -6,7 +6,7 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 15:25:27 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/02/21 18:29:31 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/02/21 19:41:01 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,18 @@ int		stack_pop_top(t_stack *stack);
 int		stack_pop_bottom(t_stack *stack);
 int		stack_peek_top(t_stack *stack);
 int		stack_peek_bottom(t_stack *stack);
+
+//algorithm operations
+void	sa(t_stack	*stack, int is_called);
+void	sb(t_stack	*stack, int is_called);
+void	ss(t_stack *stack_a, t_stack *stack_b);
+void	pa(t_stack *stack_a, t_stack *stack_b);
+void	pb(t_stack *stack_a, t_stack *stack_b);
+void	ra(t_stack *stack, int is_called);
+void	rb(t_stack *stack, int is_called);
+void	rr(t_stack *stack_a, t_stack *stack_b);
+void	rra(t_stack *stack, int is_called);
+void	rrb(t_stack *stack, int is_called);
+void	rrr(t_stack *stack_a, t_stack *stack_b);
 
 #endif

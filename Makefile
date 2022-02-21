@@ -2,7 +2,13 @@ NAME		:=	push_swap
 
 SRCS		:=	srcs/main.c \
 				srcs/init.c \
-				srcs/push.c
+				srcs/push.c \
+				srcs/pop.c \
+				srcs/peek.c \
+				srcs/swap.c \
+				srcs/push_ab.c \
+				srcs/rotate.c \
+				srcs/reverse_rotate.c
 
 OBJS		:=	${SRCS:.c=.o}
 
