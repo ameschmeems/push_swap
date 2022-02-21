@@ -6,7 +6,7 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 15:25:27 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/02/21 17:51:30 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/02/21 18:29:31 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 # define PUSH_SWAP_H
 # include "../ft_printf/includes/ft_printf.h"
+# include <stdio.h>
 
 typedef struct s_node
 {
@@ -35,5 +36,9 @@ t_stack	*stack_init(void);
 //stack operations
 int		stack_push_top(t_stack *stack, int value);
 int		stack_push_bottom(t_stack *stack, int value);
+int		stack_pop_top(t_stack *stack);
+int		stack_pop_bottom(t_stack *stack);
+int		stack_peek_top(t_stack *stack);
+int		stack_peek_bottom(t_stack *stack);
 
 #endif
