@@ -13,15 +13,15 @@ INCLUDES	:=	./includes
 all:		${NAME}
 
 ${NAME}:	${SRCS}
-		@make -C ./libft bonus
-		@{CC} @{CFLAGS} -Llibft -lft -o ${NAME}
+		@make -C ./ft_printf
+		${CC} ${CFLAGS} ${SRCS} -Lft_printf -lftprintf -o ${NAME}
 
 clean:
-		@make -C ./libft clean
+		@make -C ./ft_printf clean
 		rm -f ${OBJS}
 
 fclean:		clean
-		@make -C ./libft fclean
+		@make -C ./ft_printf fclean
 		rm -f ${NAME}
 
 re:			fclean all
