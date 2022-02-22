@@ -6,7 +6,7 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 15:25:27 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/02/21 19:41:01 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/02/22 15:26:17 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,8 @@ void	rr(t_stack *stack_a, t_stack *stack_b);
 void	rra(t_stack *stack, int is_called);
 void	rrb(t_stack *stack, int is_called);
 void	rrr(t_stack *stack_a, t_stack *stack_b);
+
+//error management
+void	check_nums(char **argv);
 
 #endif

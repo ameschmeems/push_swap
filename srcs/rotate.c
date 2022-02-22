@@ -6,7 +6,7 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 19:24:35 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/02/21 19:31:36 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/02/22 15:02:00 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ void	rb(t_stack *stack, int is_called)
 void	rr(t_stack *stack_a, t_stack *stack_b)
 {
 	ra(stack_a, 0);
-	rb(stack_a, 0);
+	rb(stack_b, 0);
 	ft_printf("%s\n", __func__);
 }
