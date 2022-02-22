@@ -6,7 +6,7 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 15:25:27 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/02/22 15:26:17 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/02/22 16:24:37 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # define PUSH_SWAP_H
 # include "../ft_printf/includes/ft_printf.h"
 # include <stdio.h>
+# include <limits.h>
 
 typedef struct s_node
 {
@@ -56,5 +57,7 @@ void	rrr(t_stack *stack_a, t_stack *stack_b);
 
 //error management
 void	check_nums(char **argv);
+void	check_size(char **argv);
+void	check_duplicates(t_stack *stack, int value);
 
 #endif
