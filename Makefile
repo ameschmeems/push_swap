@@ -9,7 +9,8 @@ SRCS		:=	srcs/main.c \
 				srcs/push_ab.c \
 				srcs/rotate.c \
 				srcs/reverse_rotate.c \
-				srcs/error.c
+				srcs/error.c \
+				srcs/push_swap_upto3.c
 
 OBJS		:=	${SRCS:.c=.o}
 
