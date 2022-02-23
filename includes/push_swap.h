@@ -6,7 +6,7 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 15:25:27 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/02/23 03:39:01 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/02/23 03:53:23 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,16 @@ void	rrb(t_stack *stack, int is_called);
 void	rrr(t_stack *stack_a, t_stack *stack_b);
 
 //error management
-void	check_nums(char **argv);
-void	check_size(char **argv);
-void	check_duplicates(t_stack *stack, int value);
+void	check_nums(char **argv, t_stack *stack_a, t_stack *stack_b);
+void	check_size(char **argv, t_stack *stack_a, t_stack *stack_b);
+void	check_duplicates(t_stack *stack_a, t_stack *stack_b, int value);
 
 //sorting
 void	sort_small(t_stack *stack_a, int argc);
 void	sort_mid(t_stack *stack_a, t_stack *stack_b, int argc);
 void	sort_large(t_stack *stack_a, t_stack *stack_b);
+
+//clean up
+void	stack_destroy(t_stack *stack);
 
 #endif

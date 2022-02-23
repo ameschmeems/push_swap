@@ -6,7 +6,7 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:19:28 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/02/21 18:33:22 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/02/23 03:57:59 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_stack	*stack_init(void)
 {
 	t_stack	*stack;
 
-	stack = malloc(sizeof(stack));
+	stack = malloc(sizeof(t_stack));
 	if (!stack)
 		return (NULL);
 	stack->top = NULL;
