@@ -6,7 +6,7 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 15:31:49 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/02/22 20:56:44 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/02/23 03:39:07 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,22 @@ void	program_init(int argc, char **argv, t_stack *stack_a)
 	}
 }
 
+int	is_sorted(t_stack *stack)
+{
+	t_node	*current;
+	int		previous;
+
+	current = stack->top;
+	while (current->prev)
+	{
+		previous = current->value;
+		current = current->prev;
+		if (previous > current->value)
+			return (0);
+	}
+	return (1);
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
@@ -39,7 +55,12 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		program_init(argc, argv, stack_a);
-		sort_small(stack_a, argc);
+		if (argc < 5 && !is_sorted(stack_a))
+			sort_small(stack_a, argc);
+		else if ((argc == 5 || argc == 6) && !is_sorted(stack_a))
+			sort_mid(stack_a, stack_b, argc);
+		else if (!is_sorted(stack_a))
+			sort_large(stack_a, stack_b);
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 15:25:27 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/02/22 20:44:48 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/02/23 03:39:01 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,7 @@ void	check_duplicates(t_stack *stack, int value);
 
 //sorting
 void	sort_small(t_stack *stack_a, int argc);
+void	sort_mid(t_stack *stack_a, t_stack *stack_b, int argc);
+void	sort_large(t_stack *stack_a, t_stack *stack_b);
 
 #endif
