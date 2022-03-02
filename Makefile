@@ -12,7 +12,8 @@ SRCS		:=	srcs/main.c \
 				srcs/error.c \
 				srcs/push_swap_upto3.c \
 				srcs/push_swap_upto5.c \
-				srcs/push_swap_large.c
+				srcs/push_swap_large.c \
+				srcs/simplify_stack.c
 
 OBJS		:=	${SRCS:.c=.o}
 
