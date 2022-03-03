@@ -6,7 +6,7 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 03:35:58 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/03/03 02:09:38 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/03/03 02:50:04 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,12 @@ int	num_bits(int num)
 
 void	sort_large(t_stack *stack_a, t_stack *stack_b, int size)
 {
-	int	max_num;
-	int	max_bits;
-	int	num;
 	int	i;
 	int	j;
+	int	num;
 
-	max_num = size - 1;
-	max_bits = num_bits(max_num);
 	i = 0;
-	while (i < max_bits)
+	while (!is_sorted(stack_a))
 	{
 		j = 0;
 		while (j < size)
@@ -46,7 +42,9 @@ void	sort_large(t_stack *stack_a, t_stack *stack_b, int size)
 			j++;
 		}
 		while (stack_b->top)
+		{
 			pa(stack_a, stack_b);
+		}
 		i++;
 	}
 }

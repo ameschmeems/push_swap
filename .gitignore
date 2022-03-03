@@ -5,3 +5,4 @@ checker_linux
 push_swap
 ft_printf/libftprintf.a
 ft_printf/libft/libft.a
+pyviz.py
