@@ -6,7 +6,7 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 03:35:58 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/03/03 16:05:09 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/03/03 16:44:25 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ void	sort_large(t_stack *stack_a, t_stack *stack_b, int size)
 			if (((num >> i) & 1) == 1)
 				ra(stack_a, 1);
 			else
-				pb(stack_a, stack_b);
+				pb(stack_a, stack_b, 1);
 			j++;
 		}
 		while (stack_b->top)
 		{
-			pa(stack_a, stack_b);
+			pa(stack_a, stack_b, 1);
 		}
 		i++;
 	}

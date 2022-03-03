@@ -6,7 +6,7 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 01:39:01 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/02/23 03:21:46 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/03/03 16:45:21 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,8 @@ void	sort_mid(t_stack *stack_a, t_stack *stack_b, int argc)
 {
 	int	top;
 
-	pb(stack_a, stack_b);
-	pb(stack_a, stack_b);
+	pb(stack_a, stack_b, 1);
+	pb(stack_a, stack_b, 1);
 	if (argc == 5)
 		sort_small(stack_a, 3);
 	else if (argc == 6)
@@ -103,7 +103,7 @@ void	sort_mid(t_stack *stack_a, t_stack *stack_b, int argc)
 	{
 		top = closest_above(stack_a, stack_peek_top(stack_b));
 		smart_rotate(stack_a, top);
-		pa(stack_a, stack_b);
+		pa(stack_a, stack_b, 1);
 	}
 	smart_rotate(stack_a, find_min(stack_a));
 }

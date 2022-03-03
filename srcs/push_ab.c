@@ -6,13 +6,13 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 19:06:02 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/02/21 19:30:50 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/03/03 16:42:49 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	pa(t_stack *stack_a, t_stack *stack_b)
+void	pa(t_stack *stack_a, t_stack *stack_b, int is_called)
 {
 	int	temp;
 
@@ -22,10 +22,11 @@ void	pa(t_stack *stack_a, t_stack *stack_b)
 		stack_pop_top(stack_b);
 		stack_push_top(stack_a, temp);
 	}
-	ft_printf("%s\n", __func__);
+	if (is_called)
+		ft_printf("%s\n", __func__);
 }
 
-void	pb(t_stack *stack_a, t_stack *stack_b)
+void	pb(t_stack *stack_a, t_stack *stack_b, int is_called)
 {
 	int	temp;
 
@@ -35,5 +36,6 @@ void	pb(t_stack *stack_a, t_stack *stack_b)
 		stack_pop_top(stack_a);
 		stack_push_top(stack_b, temp);
 	}
-	ft_printf("%s\n", __func__);
+	if (is_called)
+		ft_printf("%s\n", __func__);
 }

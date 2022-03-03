@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 15:25:27 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/03/03 16:53:44 by kpucylo          ###   ########.fr       */
+/*   Created: 2022/03/03 16:26:25 by kpucylo           #+#    #+#             */
+/*   Updated: 2022/03/03 17:58:32 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
+#ifndef CHECKER_H
 
-# define PUSH_SWAP_H
-# include "../ft_printf/includes/ft_printf.h"
+# define CHECKER_H
+# include <unistd.h>
 # include <limits.h>
+# include "../ft_printf/includes/ft_printf.h"
+# include "../gnl/get_next_line.h"
 
 typedef struct s_node
 {
@@ -58,15 +60,11 @@ void	rrr(t_stack *stack_a, t_stack *stack_b, int is_called);
 void	check_nums(char **argv, t_stack *stack_a, t_stack *stack_b);
 void	check_size(char **argv, t_stack *stack_a, t_stack *stack_b);
 void	check_duplicates(t_stack *stack_a, t_stack *stack_b, int value);
+void	throw_error(t_stack *stack_a, t_stack *stack_b);
 
-//sorting
-void	sort_small(t_stack *stack_a, int argc);
-void	sort_mid(t_stack *stack_a, t_stack *stack_b, int argc);
-void	sort_large(t_stack *stack_a, t_stack *stack_b, int size);
-int		is_sorted(t_stack *stack);
-
-//radix
-void	simplify(t_stack *stack, int argc);
+//checker operations
+char	**get_instructions(void);
+void	apply_operations(t_stack *stack_a, t_stack *stack_b, char **instructions);
 
 //clean up
 void	stack_destroy(t_stack *stack);

@@ -6,7 +6,7 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 18:35:42 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/02/21 19:07:39 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/03/03 16:41:54 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,10 @@ void	sb(t_stack	*stack, int is_called)
 		ft_printf("%s\n", __func__);
 }
 
-void	ss(t_stack *stack_a, t_stack *stack_b)
+void	ss(t_stack *stack_a, t_stack *stack_b, int is_called)
 {
 	sa(stack_a, 0);
 	sb(stack_b, 0);
-	ft_printf("%s\n", __func__);
+	if (is_called)
+		ft_printf("%s\n", __func__);
 }

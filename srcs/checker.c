@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 15:31:49 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/03/03 16:54:14 by kpucylo          ###   ########.fr       */
+/*   Created: 2022/03/03 16:49:33 by kpucylo           #+#    #+#             */
+/*   Updated: 2022/03/03 17:54:32 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/checker.h"
 
 void	program_init(int argc, char **argv, t_stack *stack_a, t_stack *stack_b)
 {
@@ -49,21 +49,21 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
+	char	**instructions;
 
 	stack_a = stack_init();
 	stack_b = stack_init();
 	if (argc > 1)
 	{
 		program_init(argc, argv, stack_a, stack_b);
-		simplify(stack_a, argc);
-		if (argc < 5 && !is_sorted(stack_a))
-			sort_small(stack_a, argc);
-		else if ((argc == 5 || argc == 6) && !is_sorted(stack_a))
-			sort_mid(stack_a, stack_b, argc);
-		else if (!is_sorted(stack_a))
-			sort_large(stack_a, stack_b, argc - 1);
-		stack_destroy(stack_a);
-		stack_destroy(stack_b);
+		instructions = get_instructions();
+		apply_operations(stack_a, stack_b, instructions);
+		if (is_sorted(stack_a) && !stack_b->top)
+			ft_printf("OK\n");
+		else
+			ft_printf("KO\n");
 	}
+	stack_destroy(stack_a);
+	stack_destroy(stack_b);
 	return (0);
 }
