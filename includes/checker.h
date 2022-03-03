@@ -6,7 +6,7 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 16:26:25 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/03/03 17:58:32 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/03/03 20:15:01 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,8 @@ void	throw_error(t_stack *stack_a, t_stack *stack_b);
 
 //checker operations
 char	**get_instructions(void);
-void	apply_operations(t_stack *stack_a, t_stack *stack_b, char **instructions);
+void	apply_operations(t_stack *stack_a, t_stack *stack_b, \
+	char **instructions);
 
 //clean up
 void	stack_destroy(t_stack *stack);

@@ -6,13 +6,13 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 17:05:28 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/03/03 18:04:10 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/03/03 20:14:33 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-char **get_instructions(void)
+char	**get_instructions(void)
 {
 	int		i;
 	char	*operation;
@@ -50,7 +50,8 @@ void	wrong_operation(char **instructions, t_stack *stack_a, t_stack *stack_b)
 	throw_error(stack_a, stack_b);
 }
 
-void	check_operation(char *operation, char **instructions, t_stack *stack_a, t_stack *stack_b)
+void	check_operation(char *operation, char **instructions, \
+	t_stack *stack_a, t_stack *stack_b)
 {
 	if (!ft_strncmp(operation, "sa\n", 3))
 		sa(stack_a, 0);
@@ -78,7 +79,8 @@ void	check_operation(char *operation, char **instructions, t_stack *stack_a, t_s
 		wrong_operation(instructions, stack_a, stack_b);
 }
 
-void	apply_operations(t_stack *stack_a, t_stack *stack_b, char **instructions)
+void	apply_operations(t_stack *stack_a, t_stack *stack_b, \
+	char **instructions)
 {
 	int	i;
 
