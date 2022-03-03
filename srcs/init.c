@@ -6,7 +6,7 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:19:28 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/03/02 19:31:38 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/03/03 01:32:08 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,11 @@ t_stack	*stack_init(void)
 
 void	stack_destroy(t_stack *stack)
 {
+	if (!stack->bottom)
+	{
+		free(stack);
+		return ;
+	}
 	while (stack && stack->bottom)
 		stack_pop_bottom(stack);
 	stack->bottom = NULL;

@@ -1,4 +1,6 @@
-*/*.o
+**/*.o
 .DS_Store
 checker_Mac
 push_swap
+ft_printf/libftprintf.a
+ft_printf/libft/libft.a
