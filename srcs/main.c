@@ -6,7 +6,7 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 15:31:49 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/03/03 02:38:03 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/03/03 03:21:59 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,18 @@ int	is_sorted(t_stack *stack)
 			return (0);
 	}
 	return (1);
+}
+
+void	print_stack(t_stack *stack)
+{
+	t_node	*node;
+
+	node = stack->top;
+	while (node)
+	{
+		ft_printf("%d\n", node->value);
+		node = node->prev;
+	}
 }
 
 int	main(int argc, char **argv)

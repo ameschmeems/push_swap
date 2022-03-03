@@ -6,7 +6,7 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:22:03 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/03/03 01:54:37 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/03/03 03:22:01 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ int	*stack_to_sorted_array(t_node *top)
 		top = top->prev;
 	}
 	array = bubble_sort(array, len);
-	i = 0;
 	return (array);
 }
 
@@ -74,6 +73,7 @@ void	simplify(t_stack *stack, int argc)
 {
 	int		*array;
 	int		i;
+	int		num;
 	t_node	*node;
 
 	array = stack_to_sorted_array(stack->top);
@@ -81,9 +81,10 @@ void	simplify(t_stack *stack, int argc)
 	while (node)
 	{
 		i = 0;
-		while (array[i])
+		num = node->value;
+		while (i < argc - 1)
 		{
-			if (array[i] == node->value)
+			if (array[i] == num)
 			{
 				node->value = i;
 				break ;
